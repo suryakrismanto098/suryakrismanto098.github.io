@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Orvix – TikTok connected</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222}h1{font-size:1.6em}h2{font-size:1.15em;margin-top:1.6em}code{background:#f2f2f2;padding:2px 6px;border-radius:4px;word-break:break-all}</style></head><body>
+<h1>TikTok login</h1><p id="m">Reading result…</p>
+<p><code id="u"></code></p><button id="b" style="padding:8px 16px">Copy URL</button>
+<script>
+var q=new URLSearchParams(location.search),u=document.getElementById('u'),m=document.getElementById('m');
+u.textContent=location.href;
+m.textContent=q.get('code')?'Success. Copy this URL and paste it into the TikTok dialog in Orvix Studio.':'Login failed: '+(q.get('error_description')||q.get('error')||'no code');
+document.getElementById('b').onclick=function(){navigator.clipboard.writeText(location.href);this.textContent='Copied ✓'};
+</script></body></html>
